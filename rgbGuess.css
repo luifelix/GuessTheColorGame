@@ -3,7 +3,7 @@ h1{
 }
 
 body{
-	/*background-color: red;*/
+	background-color: grey;
 }
 
 .square{
@@ -12,4 +12,9 @@ body{
 	padding-bottom: 30%;
 	float: left;
 	margin:1.6%;
+}
+
+.container{
+	max-width: 600px;
+	margin: 0 auto;
 }
