@@ -1,9 +1,15 @@
 h1{
-	color: green;
+	color: white;
 }
 
 body{
 	background-color: grey;
+}
+
+#stripe{
+	background-color: white;
+	height: 30px;
+	text-align: center;
 }
 
 .square{
@@ -14,11 +20,11 @@ body{
 	margin:1.6%;
 }
 
-.container{
+#container{
 	max-width: 600px;
 	margin: 0 auto;
 }
 
-#message{
+/*#message{
 	color: white;
-}
+}*/

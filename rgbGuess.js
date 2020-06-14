@@ -4,8 +4,27 @@ var squares = document.querySelectorAll(".square");
 var computerPickedColor = colors[unifySquareColors()];
 var colorDisplay = document.getElementById("colorDisplay");
 var messageDisplay = document.getElementById("message");
+var resetButton = document.querySelector("#reset");
+var colorGameDisplay = document.querySelector("h1");
 
 colorDisplay.textContent = computerPickedColor;
+
+resetButton.addEventListener("click", function(){
+	//generate al new colors
+	colors = generateRandomColors(6);
+	//pick a random color from the array
+	computerPickedColor = colors[unifySquareColors()];
+	//change colour display to match picked colour
+	colorDisplay.textContent = computerPickedColor;
+	//change the colors of the squares on page
+	for(var i = 0; i<squares.length; i++){
+		squares[i].style.backgroundColor = colors[i];
+	}
+	colorGameDisplay.style.backgroundColor = "grey";
+	messageDisplay.textContent = "";
+	resetButton.textContent = "New Colours";
+
+})
 
 
 for(var i = 0; i<squares.length; i++){
@@ -22,8 +41,9 @@ for(var i = 0; i<squares.length; i++){
 			console.log("Correct");
 			messageDisplay.textContent = "Well Done";
 			colorChange(computerPickedColor);
-			document.querySelector("h1").style.backgroundColor 
+			colorGameDisplay.style.backgroundColor 
 					= computerPickedColor;
+			resetButton.textContent = "Play Again?";
 		}else{
 			console.log("Wrong");
 			this.style.backgroundColor = "grey";
